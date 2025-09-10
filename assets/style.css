@@ -1,1 +1,83 @@
+:root{
+  --bg: #0b0d12;
+  --bg-alt: #0f1219;
+  --card: #141826;
+  --text: #e8ecf1;
+  --muted: #a8b2c1;
+  --accent: #5ee3a1;
+  --accent-2:#77a9ff;
+  --border:#22283a;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, Segoe UI, Roboto, Arial}
+img{max-width:100%;height:auto}
+
+.section{padding:72px 20px;max-width:1100px;margin:0 auto}
+.section.alt{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+h1,h2,h3{line-height:1.2;margin:0 0 12px}
+h1{font-size:clamp(2rem, 4vw, 3rem)}
+h2{font-size:clamp(1.4rem, 3vw, 2rem);margin-bottom:20px}
+p{margin:0 0 12px;color:var(--muted)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(11,13,18,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text)}
+.brand img{width:28px;height:28px}
+.site-nav{display:flex;gap:14px;align-items:center}
+.site-nav a{padding:8px 10px;border-radius:10px}
+.btn{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);box-shadow:var(--shadow)}
+.btn.small{padding:6px 10px}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0a0d12;border:0}
+.btn.ghost{background:transparent}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
+
+@media (max-width:860px){
+  .site-nav{display:none;position:absolute;top:60px;right:12px;flex-direction:column;background:var(--bg-alt);padding:12px;border:1px solid var(--border);border-radius:12px}
+  .site-nav.open{display:flex}
+  .nav-toggle{display:block}
+}
+
+.hero{max-width:1100px;margin:0 auto;padding:72px 20px 48px}
+.hero p{font-size:1.05rem}
+.accent{color:var(--accent)}
+.hero-cta{display:flex;gap:12px;margin:18px 0 10px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;color:#b9c3d6}
+.hero-badges span{border:1px dashed var(--border);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.02)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.card h3{margin-bottom:8px}
+.card ul{padding-left:18px;margin:0}
+.person p{color:#cfd7e7}
+
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.diagram{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:10px;box-shadow:var(--shadow);margin:16px 0}
+.diagram svg{width:100%}
+.diagram .plane{fill:#1f2540}
+.diagram .camera{fill:#2c3252}
+.diagram .axis{stroke:#4b5480;stroke-width:2}
+.diagram .beam{stroke:var(--accent);stroke-width:2}
+.diagram .dot{fill:var(--accent)}
+.diagram .label{fill:#cfd7e7;font:12px/1.2 system-ui}
+
+.data-area{display:grid;gap:12px}
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left}
+th{background:rgba(255,255,255,.03);font-weight:600}
+
+.timeline{display:grid;gap:12px}
+.milestone{border-left:4px solid #3c466b;padding:8px 12px;background:var(--card);border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.milestone.done{border-left-color:var(--accent)}
+.milestone.wip{border-left-color:var(--accent-2)}
+
+.contact{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.footnote{margin-top:8px;color:#9aa7be;font-size:.95rem}
+
+.site-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border-top:1px solid var(--border);background:var(--bg-alt)}
+.to-top{padding:6px 10px;border:1px solid var(--border);border-radius:10px;background:var(--card)}
+.hint{color:#9fb0c8}
 
