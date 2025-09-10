@@ -81,3 +81,15 @@ th{background:rgba(255,255,255,.03);font-weight:600}
 .to-top{padding:6px 10px;border:1px solid var(--border);border-radius:10px;background:var(--card)}
 .hint{color:#9fb0c8}
 
+/* Mini Timeline */
+.mini-timeline{display:grid;gap:10px;margin:8px 0 18px}
+.mini-timeline .steps{display:flex;justify-content:space-between;gap:8px}
+.mini-timeline .step{display:flex;flex-direction:column;align-items:center;min-width:72px}
+.mini-timeline .label{margin-top:6px;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.2}
+.mini-timeline .dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--border);background:#1a2033;box-shadow:var(--shadow)}
+.mini-timeline .step[data-state="done"] .dot{background:var(--accent);border-color:transparent}
+.mini-timeline .step[data-state="wip"] .dot{background:var(--accent-2);border-color:transparent}
+.mini-timeline .step[data-state="todo"] .dot{background:#1a2033;border-color:#2a3147}
+
+.mini-timeline .track{position:relative;height:4px;background:#1a2033;border:1px solid var(--border);border-radius:999px;box-shadow:var(--shadow)}
+.mini-timeline .progress{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px}
