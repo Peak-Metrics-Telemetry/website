@@ -101,5 +101,22 @@ loadBtn?.addEventListener('click', async () => {
       return { x: parseFloat(tds[0].textContent), y: parseFloat(tds[1].textContent) };
     });
   renderChart(rows);
+// Mini-Timeline Fortschritt berechnen
+(function timelineProgress(){
+  const tl = document.querySelector('.mini-timeline');
+  if(!tl) return;
+  const steps = Array.from(tl.querySelectorAll('.step'));
+  const track = tl.querySelector('.track .progress');
+  if(!steps.length || !track) return;
+
+  // done = 1, wip = 0.5, todo = 0
+  const weights = { done: 1, wip: 0.5, todo: 0 };
+  const totals = steps.map(s => weights[s.dataset.state] ?? 0);
+  const completed = totals.reduce((a,b)=>a+b,0);
+  const max = Math.max(steps.length - 1, 1);
+
+  // Fortschritt in % der Strecke zwischen erstem und letztem Punkt
+  const percent = Math.min(100, Math.max(0, (completed / max) * 100));
+  track.style.width = `${percent}%`;
 })();
 
