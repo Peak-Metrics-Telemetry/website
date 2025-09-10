@@ -1,25 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
   <style>
     .line { 
       fill: none; 
       stroke: #000; 
-      stroke-width: 6; 
+      stroke-width: 8; 
       stroke-linecap: round; 
       stroke-linejoin: round;
     }
     .text {
       font-family: 'Arial, sans-serif';
-      font-size: 20px;
-      letter-spacing: 2px;
+      font-size: 28px;
+      letter-spacing: 3px;
       text-anchor: middle;
       fill: #222;
     }
   </style>
   
-  <!-- Berg-Form -->
-  <path class="line" d="M20 150 L70 70 L100 110 L130 50 L180 150 Z" />
+  <!-- Drei Berge -->
+  <!-- Linker Berg -->
+  <path class="line" d="M40 220 L100 120 L160 220 Z" />
+  <!-- Mittlerer Berg (höchster) -->
+  <path class="line" d="M90 220 L160 60 L230 220 Z" />
+  <!-- Rechter Berg -->
+  <path class="line" d="M180 220 L240 120 L280 220 Z" />
 
   <!-- Schriftzug -->
-  <text x="100" y="185" class="text">PEAK METRICS</text>
+  <text x="150" y="270" class="text">PEAK METRICS</text>
 </svg>
-
